@@ -5,19 +5,19 @@ import 'package:space_x/features/overview/data/models/companyinfo_models/company
 
 part 'campany_info_state.dart';
 
-class CampanyInfoCubit extends Cubit<CampanyInfoState> {
-  CampanyInfoCubit() : super(CampanyInfoInitial());
+class CompanyInfoCubit extends Cubit<CompanyInfoState> {
+  CompanyInfoCubit() : super(CompanyInfoInitial());
 
   DioServices dioServices = DioServices();
 
   Future<void> getCampanyInfo() async {
-    emit(CampanyInfoLoading());
+    emit(CompanyInfoLoading());
     try {
       Map<String, dynamic> data = await dioServices.get(endPoint: 'company');
       CompanyInfo companyInfo = CompanyInfo.fromJson(data);
-      emit(CampanyInfoSuccess(companyInfo: companyInfo));
+      emit(CompanyInfoSuccess(companyInfo: companyInfo));
     } catch (e) {
-      emit(CampanyInfoFailure(message: e.toString()));
+      emit(CompanyInfoFailure(message: e.toString()));
     }
   }
 }

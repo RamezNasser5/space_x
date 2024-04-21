@@ -10,9 +10,10 @@ class SpaceX extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(),
       debugShowCheckedModeBanner: false,
-      home: SplachView(),
+      home: const SplachView(),
     );
   }
 }

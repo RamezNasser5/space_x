@@ -1,20 +1,20 @@
 part of 'campany_info_cubit.dart';
 
 @immutable
-sealed class CampanyInfoState {}
+sealed class CompanyInfoState {}
 
-final class CampanyInfoInitial extends CampanyInfoState {}
+final class CompanyInfoInitial extends CompanyInfoState {}
 
-final class CampanyInfoSuccess extends CampanyInfoState {
+final class CompanyInfoSuccess extends CompanyInfoState {
   final CompanyInfo companyInfo;
 
-  CampanyInfoSuccess({required this.companyInfo});
+  CompanyInfoSuccess({required this.companyInfo});
 }
 
-final class CampanyInfoLoading extends CampanyInfoState {}
+final class CompanyInfoLoading extends CompanyInfoState {}
 
-final class CampanyInfoFailure extends CampanyInfoState {
+final class CompanyInfoFailure extends CompanyInfoState {
   final String message;
 
-  CampanyInfoFailure({required this.message});
+  CompanyInfoFailure({required this.message});
 }
