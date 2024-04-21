@@ -39,8 +39,8 @@ class CompanyInfo {
   });
 
   factory CompanyInfo.fromJson(Map<String, dynamic> json) => CompanyInfo(
-        headquarters: json['headquarters'],
-        links: json['links'],
+        headquarters: Headquarters.fromJson(json['headquarters']),
+        links: Links.fromJson(json['links']),
         name: json['name'],
         founder: json['founder'],
         founded: json['founded'],
