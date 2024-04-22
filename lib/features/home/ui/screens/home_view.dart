@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:space_x/features/home/logic/cubits/cubit/crew_info_cubit.dart';
 import 'package:space_x/features/home/ui/widgets/home_view_body.dart';
 
 class HomeView extends StatelessWidget {
@@ -6,6 +8,9 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const HomeViewBody();
+    return BlocProvider(
+      create: (context) => CrewInfoCubit()..getCrewInfo(),
+      child: const HomeViewBody(),
+    );
   }
 }
