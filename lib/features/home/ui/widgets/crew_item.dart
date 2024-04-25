@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:space_x/features/home/data/models/crew_info/crew_info.dart';
+import 'package:space_x/features/home/ui/screens/details_view.dart';
 
 class CrewItem extends StatelessWidget {
   const CrewItem({
@@ -32,35 +33,45 @@ class CrewItem extends StatelessWidget {
             SizedBox(
               width: 180,
               height: 120,
-              child: Card(
-                color: const Color(0xff112227),
-                elevation: 5,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 10.0, bottom: 10.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        crewInfo.name!,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontFamily: 'Poppins',
+              child: GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailsView(
+                      crewInfo: crewInfo,
+                    ),
+                  ),
+                ),
+                child: Card(
+                  color: const Color(0xff112227),
+                  elevation: 5,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10.0, bottom: 10.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          crewInfo.name!,
+                          style: const TextStyle(
+                            fontSize: 18,
+                            fontFamily: 'Poppins',
+                          ),
                         ),
-                      ),
-                      Text(
-                        crewInfo.agency!,
-                        style: const TextStyle(
-                          fontSize: 14,
+                        Text(
+                          crewInfo.agency!,
+                          style: const TextStyle(
+                            fontSize: 14,
+                          ),
                         ),
-                      ),
-                      Text(
-                        crewInfo.status!,
-                        style: const TextStyle(
-                          fontSize: 14,
+                        Text(
+                          crewInfo.status!,
+                          style: const TextStyle(
+                            fontSize: 14,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
