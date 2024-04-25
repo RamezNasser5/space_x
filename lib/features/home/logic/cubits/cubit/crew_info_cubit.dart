@@ -11,11 +11,11 @@ class CrewInfoCubit extends Cubit<CrewInfoState> {
   List<CrewInfo> crewInfo = [];
   DioServices dioServices = DioServices();
 
-  Future<void> getCrewInfo() async {
+  getCrewInfo() async {
     emit(CrewInfoLoading());
     try {
-      Map<String, dynamic> data = await dioServices.get(endPoint: 'crew');
-      for (var item in data['items']) {
+      var data = await dioServices.get(endPoint: 'crew');
+      for (var item in data) {
         crewInfo.add(CrewInfo.fromJson(item));
       }
       emit(CrewInfoSuccess(crewInfo: crewInfo));

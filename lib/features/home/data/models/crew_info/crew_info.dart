@@ -3,7 +3,7 @@ class CrewInfo {
   String? agency;
   String? image;
   String? wikipedia;
-  //List<String>? launches;
+  List<String>? launches;
   String? status;
   String? id;
 
@@ -12,7 +12,7 @@ class CrewInfo {
     this.agency,
     this.image,
     this.wikipedia,
-    //this.launches,
+    this.launches,
     this.status,
     this.id,
   });
@@ -22,9 +22,7 @@ class CrewInfo {
         agency: json['agency'] as String?,
         image: json['image'] as String?,
         wikipedia: json['wikipedia'] as String?,
-        // launches: (json['launches'] as List<dynamic>?)
-        //     ?.map((e) => e as String)
-        //     .toList(),
+        launches: (json['launches'] as List<dynamic>).cast<String>(),
         status: json['status'] as String?,
         id: json['id'] as String?,
       );

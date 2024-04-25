@@ -31,10 +31,13 @@ class HomeViewBody extends StatelessWidget {
                 builder: (context, state) {
                   if (state is CrewInfoSuccess) {
                     return ListView.builder(
-                      scrollDirection: Axis.horizontal,
                       itemCount: state.crewInfo.length,
+                      physics: const BouncingScrollPhysics(),
+                      scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
-                        return CrewItem(crewInfo: state.crewInfo[index]);
+                        return CrewItem(
+                          crewInfo: state.crewInfo[index],
+                        );
                       },
                     );
                   } else if (state is CrewInfoFailure) {
