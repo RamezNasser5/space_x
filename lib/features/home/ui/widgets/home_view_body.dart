@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:space_x/features/home/logic/cubits/cubit/crew_info_cubit.dart';
-import 'package:space_x/features/home/ui/widgets/crew_item.dart';
+import 'package:space_x/features/home/ui/widgets/category_list_view.dart';
+import 'package:space_x/features/home/ui/widgets/crew_list_view.dart';
+import 'package:space_x/features/home/ui/widgets/custom_text_field.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -17,39 +17,26 @@ class HomeViewBody extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.search_sharp),
+            icon: const Icon(Icons.dark_mode),
           ),
         ],
       ),
-      body: Column(
-        children: [
-          const SizedBox(height: 25),
-          SizedBox(
-            height: 140,
-            child: Expanded(
-              child: BlocBuilder<CrewInfoCubit, CrewInfoState>(
-                builder: (context, state) {
-                  if (state is CrewInfoSuccess) {
-                    return ListView.builder(
-                      itemCount: state.crewInfo.length,
-                      physics: const BouncingScrollPhysics(),
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) {
-                        return CrewItem(
-                          crewInfo: state.crewInfo[index],
-                        );
-                      },
-                    );
-                  } else if (state is CrewInfoFailure) {
-                    return Center(
-                      child: Text(state.message),
-                    );
-                  } else {
-                    return const Center(child: CircularProgressIndicator());
-                  }
-                },
-              ),
+      body: const CustomScrollView(
+        physics: NeverScrollableScrollPhysics(),
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                SizedBox(height: 20),
+                CustomTextField(),
+                SizedBox(height: 20),
+                CrewListView(),
+                SizedBox(height: 20),
+              ],
             ),
+          ),
+          SliverToBoxAdapter(
+            child: CategoryListView(),
           ),
         ],
       ),
