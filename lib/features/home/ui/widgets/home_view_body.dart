@@ -21,10 +21,10 @@ class HomeViewBody extends StatelessWidget {
           ),
         ],
       ),
-      body: const CustomScrollView(
-        physics: NeverScrollableScrollPhysics(),
+      body: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
         slivers: [
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: Column(
               children: [
                 SizedBox(height: 20),
