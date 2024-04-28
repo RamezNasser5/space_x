@@ -11,13 +11,14 @@ class CoreCubit extends Cubit<CoreState> {
   List<CoreModel> cores = [];
   DioServices dio = DioServices();
 
-  fetshAllCubits() async {
+  fetshAllCores() async {
     emit(CoreCubitLoading());
     try {
       var data = await dio.get(endPoint: 'cores');
       for (var item in data) {
         cores.add(CoreModel.fromJson(item));
       }
+      emit(CoreCubitSuccess(cores: cores));
     } catch (e) {
       emit(CoreCubitFailure(message: e.toString()));
     }
