@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:space_x/features/category/data/core_model/core_model.dart';
+import 'package:space_x/features/category/data/models/core_model/core_model.dart';
 
 class CoreItem extends StatelessWidget {
   const CoreItem({super.key, required this.coreModel});

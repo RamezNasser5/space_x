@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:space_x/core/network/services_dio.dart';
-import 'package:space_x/features/category/data/core_model/core_model.dart';
+import 'package:space_x/features/category/data/models/core_model/core_model.dart';
 
 part 'core_state.dart';
 
