@@ -11,10 +11,10 @@ class DragonCubit extends Cubit<DragonState> {
   DioServices dioServices = DioServices();
   List<DragonsModel> dragons = [];
 
-  fetshAllDragons() {
+  fetshAllDragons() async {
     emit(DragonLoading());
     try {
-      var data = dioServices.get(endPoint: 'dragons');
+      var data = await dioServices.get(endPoint: 'dragons');
       for (var item in data) {
         dragons.add(DragonsModel.fromJson(item));
       }

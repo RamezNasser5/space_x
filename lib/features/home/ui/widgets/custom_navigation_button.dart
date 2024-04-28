@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:space_x/features/category/ui/views/core_view.dart';
+import 'package:space_x/features/category/ui/views/dragon_view.dart';
 
 class CustomNavigationButton extends StatelessWidget {
   const CustomNavigationButton({super.key, required this.categoryName});
@@ -20,47 +21,7 @@ class CustomNavigationButton extends StatelessWidget {
       ),
       child: GestureDetector(
         onTap: () {
-          switch (categoryName) {
-            case 'cores':
-              {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const CoreView();
-                    },
-                  ),
-                );
-              }
-              break;
-            case 'dragons':
-              {}
-              break;
-            case 'landpads':
-              {}
-              break;
-            case 'launches':
-              {}
-              break;
-            case 'lanchpads':
-              {}
-              break;
-            case 'payloads':
-              {}
-              break;
-            case 'roadster':
-              {}
-              break;
-            case 'rockets':
-              {}
-              break;
-            case 'ships':
-              {}
-              break;
-            case 'starlink':
-              {}
-              break;
-          }
+          categoriesNavigaton(context);
         },
         child: const Icon(
           Icons.arrow_forward_ios,
@@ -68,5 +29,58 @@ class CustomNavigationButton extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void categoriesNavigaton(BuildContext context) {
+    switch (categoryName) {
+      case 'cores':
+        {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return const CoreView();
+              },
+            ),
+          );
+        }
+        break;
+      case 'dragons':
+        {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return const DragonView();
+              },
+            ),
+          );
+        }
+        break;
+      case 'landpads':
+        {}
+        break;
+      case 'launches':
+        {}
+        break;
+      case 'lanchpads':
+        {}
+        break;
+      case 'payloads':
+        {}
+        break;
+      case 'roadster':
+        {}
+        break;
+      case 'rockets':
+        {}
+        break;
+      case 'ships':
+        {}
+        break;
+      case 'starlink':
+        {}
+        break;
+    }
   }
 }

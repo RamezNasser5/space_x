@@ -7,10 +7,11 @@ class CoreViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Cores Details'),
-          centerTitle: true,
-        ),
-        body: const CoreListView());
+      appBar: AppBar(
+        title: const Text('Cores Details'),
+        centerTitle: true,
+      ),
+      body: const CoreListView(),
+    );
   }
 }
