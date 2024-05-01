@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:space_x/features/home/data/models/crew_info/crew_info.dart';
+import 'package:space_x/features/overview/ui/widgets/info_body.dart';
 
 class DetailesContainer extends StatelessWidget {
   const DetailesContainer({
@@ -18,40 +19,19 @@ class DetailesContainer extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text(
-            crewInfo.name!,
-            style: const TextStyle(fontSize: 20),
+          CustomItem(
+            itemname: 'status',
+            itemvalue: crewInfo.status!,
           ),
-          Text(
-            crewInfo.status!,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
-            ),
+          CustomItem(
+            itemname: 'agency',
+            itemvalue: crewInfo.agency!,
           ),
-          Text(
-            crewInfo.agency!,
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
-            ),
+          CustomItem(
+            itemname: 'wikipedia',
+            itemvalue: crewInfo.wikipedia!,
           ),
-          Text(
-            crewInfo.wikipedia!,
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-          Text(
-            crewInfo.id!,
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
+          CustomItem(itemname: 'ID', itemvalue: crewInfo.id!),
         ],
       ),
     );

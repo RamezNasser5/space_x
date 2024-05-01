@@ -19,7 +19,7 @@ class InfoViewBody extends StatelessWidget {
           ],
         ),
       ),
-      child: const InfoBody(),
+      child: InfoBody(),
     );
   }
 }
