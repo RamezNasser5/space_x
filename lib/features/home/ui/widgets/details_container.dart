@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:space_x/core/widgets/custom_item.dart';
 import 'package:space_x/features/home/data/models/crew_info/crew_info.dart';
-import 'package:space_x/features/overview/ui/widgets/info_body.dart';
 
 class DetailesContainer extends StatelessWidget {
   const DetailesContainer({

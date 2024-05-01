@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:space_x/const.dart';
+import 'package:space_x/core/utils/const.dart';
+import 'package:space_x/core/widgets/custom_item.dart';
 import 'package:space_x/features/overview/logic/campany_info/campany_info_cubit.dart';
 
 class InfoBody extends StatelessWidget {
@@ -31,6 +32,22 @@ class InfoBody extends StatelessWidget {
           return Text(state.message);
         }
         if (state is CompanyInfoSuccess) {
+          final List<String> values = [
+            state.companyInfo.name!,
+            state.companyInfo.founder!,
+            state.companyInfo.founded!.toString(),
+            state.companyInfo.employees!.toString(),
+            state.companyInfo.vehicles!.toString(),
+            state.companyInfo.launchSites.toString(),
+            state.companyInfo.testSites.toString(),
+            state.companyInfo.ceo.toString(),
+            state.companyInfo.cto.toString(),
+            state.companyInfo.coo!,
+            state.companyInfo.ctoPropulsion!,
+            state.companyInfo.valuation.toString(),
+            state.companyInfo.summary!,
+            state.companyInfo.id!,
+          ];
           return SafeArea(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -52,23 +69,6 @@ class InfoBody extends StatelessWidget {
                   child: ListView.builder(
                       itemCount: items.length,
                       itemBuilder: (context, index) {
-                        final List<String> values = [
-                          state.companyInfo.name!,
-                          state.companyInfo.founder!,
-                          state.companyInfo.founded!.toString(),
-                          state.companyInfo.employees!.toString(),
-                          state.companyInfo.vehicles!.toString(),
-                          state.companyInfo.launchSites.toString(),
-                          state.companyInfo.testSites.toString(),
-                          state.companyInfo.ceo.toString(),
-                          state.companyInfo.cto.toString(),
-                          state.companyInfo.coo!,
-                          state.companyInfo.ctoPropulsion!,
-                          state.companyInfo.valuation.toString(),
-                          state.companyInfo.summary!,
-                          state.companyInfo.id!,
-                        ];
-
                         return CustomItem(
                           itemname: items[index],
                           itemvalue: values[index],
@@ -82,35 +82,6 @@ class InfoBody extends StatelessWidget {
           return const Center(child: CircularProgressIndicator());
         }
       },
-    );
-  }
-}
-
-class CustomItem extends StatelessWidget {
-  const CustomItem({
-    super.key,
-    required this.itemname,
-    required this.itemvalue,
-  });
-
-  final String itemname;
-  final String itemvalue;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 22),
-        decoration: BoxDecoration(
-            color: btnColor.withOpacity(0.2),
-            borderRadius: BorderRadius.circular(20)),
-        alignment: Alignment.center,
-        width: 300,
-        height: 50,
-        child: Text('$itemname: $itemvalue',
-            maxLines: 1, overflow: TextOverflow.ellipsis),
-      ),
     );
   }
 }

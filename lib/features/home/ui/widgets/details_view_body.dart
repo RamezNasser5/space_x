@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:space_x/const.dart';
+import 'package:space_x/core/utils/const.dart';
 import 'package:space_x/features/home/data/models/crew_info/crew_info.dart';
 import 'package:space_x/features/home/ui/widgets/details_container.dart';
 
