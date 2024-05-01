@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:space_x/core/widgets/custom_item.dart';
+import 'package:space_x/core/widgets/custom_link_item.dart';
 import 'package:space_x/features/home/data/models/crew_info/crew_info.dart';
 
 class DetailesContainer extends StatelessWidget {
@@ -27,9 +28,9 @@ class DetailesContainer extends StatelessWidget {
             itemname: 'agency',
             itemvalue: crewInfo.agency!,
           ),
-          CustomItem(
-            itemname: 'wikipedia',
-            itemvalue: crewInfo.wikipedia!,
+          CustomLinkItem(
+            itemKey: 'wikipedia',
+            itemValue: crewInfo.wikipedia!,
           ),
           CustomItem(itemname: 'ID', itemvalue: crewInfo.id!),
         ],

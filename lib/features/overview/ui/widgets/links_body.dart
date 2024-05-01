@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:space_x/core/widgets/custom_link_item.dart';
 import 'package:space_x/features/overview/logic/campany_info/campany_info_cubit.dart';
 
 class LinksBody extends StatelessWidget {
@@ -27,18 +28,18 @@ class LinksBody extends StatelessWidget {
                 'Links',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              Text(
-                'link of elonTwitter: ${state.companyInfo.links!.elonTwitter}',
-              ),
-              Text(
-                'link of flickr: ${state.companyInfo.links!.flickr}',
-              ),
-              Text(
-                'link of twitter: ${state.companyInfo.links!.twitter}',
-              ),
-              Text(
-                'link of website: ${state.companyInfo.links!.website}',
-              ),
+              CustomLinkItem(
+                  itemKey: 'link of elonTwitter',
+                  itemValue: state.companyInfo.links!.elonTwitter!),
+              CustomLinkItem(
+                  itemKey: 'link of flickr',
+                  itemValue: state.companyInfo.links!.flickr!),
+              CustomLinkItem(
+                  itemKey: 'link of twitter',
+                  itemValue: state.companyInfo.links!.twitter!),
+              CustomLinkItem(
+                  itemKey: 'link of website',
+                  itemValue: state.companyInfo.links!.website!),
             ],
           );
         } else {
