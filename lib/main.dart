@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:space_x/features/splach/ui/screens/splach_view.dart';
+import 'package:space_x/core/routing/app_router.dart';
 
 void main() {
   runApp(const SpaceX());
@@ -10,10 +10,10 @@ class SpaceX extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       theme: ThemeData.dark().copyWith(),
       debugShowCheckedModeBanner: false,
-      home: const SplachView(),
+      routerConfig: AppRouter.routers,
     );
   }
 }

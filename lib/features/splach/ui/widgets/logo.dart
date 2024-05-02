@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:space_x/features/overview/ui/screens/overview.dart';
+import 'package:go_router/go_router.dart';
+import 'package:space_x/core/routing/app_router.dart';
 import 'package:space_x/features/splach/ui/widgets/spacex_row.dart';
 
 class Logo extends StatefulWidget {
@@ -37,10 +38,7 @@ class _LogoState extends State<Logo> {
   }
 
   void navigatToHome(context) {
-    Future.delayed(const Duration(seconds: 3), () {
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-        return const OverView();
-      }));
-    });
+    Future.delayed(const Duration(seconds: 3),
+        () => GoRouter.of(context).go(AppRouter.kOverView));
   }
 }

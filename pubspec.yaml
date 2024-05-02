@@ -40,6 +40,7 @@ dependencies:
   json_annotation: ^4.8.1
   flutter_bloc: ^8.1.5
   url_launcher: ^6.2.6
+  go_router: ^14.0.2
 
 dev_dependencies:
   flutter_test:
@@ -84,8 +85,8 @@ flutter:
   fonts:
     - family: Poppins
       fonts:
-        - asset: assets/fonts/
-  #       - asset: fonts/Schyler-Italic.ttf
+        - asset: assets/fonts/Poppins-Italic.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

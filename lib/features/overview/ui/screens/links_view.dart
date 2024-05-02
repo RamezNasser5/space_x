@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:space_x/features/overview/logic/campany_info/campany_info_cubit.dart';
-import 'package:space_x/features/overview/ui/screens/info_view.dart';
+import 'package:go_router/go_router.dart';
+import 'package:space_x/core/routing/app_router.dart';
 import 'package:space_x/features/overview/ui/widgets/links_view_body.dart';
 
 class LinksView extends StatelessWidget {
@@ -12,21 +11,11 @@ class LinksView extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return const InfoView();
-              },
-            ),
-          );
+          GoRouter.of(context).push(AppRouter.kInfoView);
         },
         child: const Icon(Icons.arrow_forward_ios),
       ),
-      body: BlocProvider(
-        create: (context) => CompanyInfoCubit()..getCampanyInfo(),
-        child: const LinksViewBody(),
-      ),
+      body: const LinksViewBody(),
     );
   }
 }
