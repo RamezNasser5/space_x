@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:space_x/features/category/ui/views/core_view.dart';
-import 'package:space_x/features/category/ui/views/dragon_view.dart';
+import 'package:go_router/go_router.dart';
+import 'package:space_x/core/routing/app_router.dart';
 
 class CustomNavigationButton extends StatelessWidget {
   const CustomNavigationButton({super.key, required this.categoryName});
@@ -34,28 +34,10 @@ class CustomNavigationButton extends StatelessWidget {
   void categoriesNavigaton(BuildContext context) {
     switch (categoryName) {
       case 'cores':
-        {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return const CoreView();
-              },
-            ),
-          );
-        }
+        GoRouter.of(context).push(AppRouter.kCoreView);
         break;
       case 'dragons':
-        {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return const DragonView();
-              },
-            ),
-          );
-        }
+        GoRouter.of(context).push(AppRouter.kDragonView);
         break;
       case 'landpads':
         {}

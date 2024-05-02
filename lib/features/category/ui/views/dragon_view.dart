@@ -18,19 +18,20 @@ class DragonView extends StatelessWidget {
       body: BlocProvider(
         create: (context) => DragonCubit()..fetshAllDragons(),
         child: Container(
-            height: double.infinity,
-            width: double.infinity,
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.bottomLeft,
-                end: Alignment.topRight,
-                colors: [
-                  linearPrimaryColor1,
-                  linearPrimaryColor2,
-                ],
-              ),
+          height: double.infinity,
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomLeft,
+              end: Alignment.topRight,
+              colors: [
+                linearPrimaryColor1,
+                linearPrimaryColor2,
+              ],
             ),
-            child: const DragonViewBody()),
+          ),
+          child: const DragonViewBody(),
+        ),
       ),
     );
   }

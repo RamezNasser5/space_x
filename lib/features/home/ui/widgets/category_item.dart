@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:space_x/core/utils/styles.dart';
 import 'package:space_x/features/home/ui/widgets/custom_navigation_button.dart';
 
 class CategoryItem extends StatelessWidget {
@@ -21,9 +22,7 @@ class CategoryItem extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 10, top: 30.0),
                 child: Text(
                   categoryName,
-                  style: const TextStyle(
-                    fontSize: 20,
-                  ),
+                  style: Style.nameStyle,
                 ),
               ),
               Positioned(
