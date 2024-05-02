@@ -8,11 +8,9 @@ class CoreView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocProvider(
-        create: (context) => CoreCubit()..fetshAllCores(),
-        child: const CoreViewBody(),
-      ),
+    return BlocProvider(
+      create: (context) => CoreCubit()..fetshAllCores(),
+      child: const CoreViewBody(),
     );
   }
 }

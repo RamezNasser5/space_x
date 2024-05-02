@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:space_x/core/utils/const.dart';
 import 'package:space_x/features/category/logic/cubits/dragon_cubit/dragon_cubit.dart';
 import 'package:space_x/features/category/ui/widgets/dragon_view_body.dart';
 
@@ -24,8 +25,8 @@ class DragonView extends StatelessWidget {
                 begin: Alignment.bottomLeft,
                 end: Alignment.topRight,
                 colors: [
-                  Color(0xff271125),
-                  Color(0xff112227),
+                  linearPrimaryColor1,
+                  linearPrimaryColor2,
                 ],
               ),
             ),

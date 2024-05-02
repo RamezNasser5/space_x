@@ -18,7 +18,7 @@ class CustomItem extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 22),
         decoration: BoxDecoration(
-            color: btnColor.withOpacity(0.2),
+            color: linearPrimaryColor2.withOpacity(0.2),
             borderRadius: BorderRadius.circular(20)),
         alignment: Alignment.center,
         width: 300,

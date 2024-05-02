@@ -59,7 +59,8 @@ class InfoBody extends StatelessWidget {
                   width: 400,
                   height: 100,
                   decoration: BoxDecoration(
-                      color: btnColor, borderRadius: BorderRadius.circular(23)),
+                      color: linearPrimaryColor2,
+                      borderRadius: BorderRadius.circular(23)),
                   child: Text(
                     'Info Body',
                     style: Theme.of(context).textTheme.titleLarge,

@@ -1,3 +1,4 @@
 import 'package:flutter/material.dart';
 
-const btnColor = Color(0xff4E388B);
+const linearPrimaryColor1 = Color(0xff271125);
+const linearPrimaryColor2 = Color(0xff4E388B);

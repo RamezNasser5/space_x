@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:space_x/core/utils/const.dart';
 import 'package:space_x/features/home/ui/widgets/category_list_view.dart';
 import 'package:space_x/features/home/ui/widgets/crew_list_view.dart';
 import 'package:space_x/features/home/ui/widgets/custom_text_field.dart';
@@ -9,7 +10,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff271125),
+      backgroundColor: linearPrimaryColor1,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: const Text('SpaceX'),

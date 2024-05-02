@@ -11,7 +11,7 @@ class DetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: btnColor,
+      backgroundColor: linearPrimaryColor2,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -23,6 +23,7 @@ class DetailsViewBody extends StatelessWidget {
                 backgroundImage: NetworkImage(crewInfo.image!),
               ),
             ),
+            Text(crewInfo.name!),
             DetailesContainer(
               crewInfo: crewInfo,
             ),

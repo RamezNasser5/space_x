@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:space_x/core/utils/const.dart';
 import 'package:space_x/features/category/data/models/dragons_model/dragons_model.dart';
 import 'package:space_x/features/category/ui/widgets/dragon_details_view_body.dart';
 
@@ -23,7 +24,7 @@ class DragonDetailsView extends StatelessWidget {
               begin: Alignment.bottomLeft,
               end: Alignment.topRight,
               colors: [
-                Color(0xff271125),
+                linearPrimaryColor1,
                 Color(0xff112227),
               ],
             ),

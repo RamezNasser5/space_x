@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:space_x/core/utils/const.dart';
 import 'package:space_x/features/overview/ui/widgets/info_body.dart';
 
 class InfoViewBody extends StatelessWidget {
@@ -14,8 +15,8 @@ class InfoViewBody extends StatelessWidget {
           begin: Alignment.bottomLeft,
           end: Alignment.topRight,
           colors: [
-            Color(0xff271125),
-            Color(0xff112227),
+            linearPrimaryColor1,
+            linearPrimaryColor2,
           ],
         ),
       ),

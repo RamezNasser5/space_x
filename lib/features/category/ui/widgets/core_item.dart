@@ -16,7 +16,7 @@ class CoreItem extends StatelessWidget {
         width: double.infinity,
         height: MediaQuery.of(context).size.height * 0.85,
         decoration: BoxDecoration(
-          color: btnColor.withOpacity(0.3),
+          color: linearPrimaryColor2.withOpacity(0.4),
           borderRadius: const BorderRadius.all(Radius.circular(10)),
         ),
         child: Column(
