@@ -13,7 +13,7 @@ class DragonView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Dragons'),
         centerTitle: true,
-        backgroundColor: const Color(0xff112227),
+        backgroundColor: linearPrimaryColor2,
       ),
       body: BlocProvider(
         create: (context) => DragonCubit()..fetshAllDragons(),

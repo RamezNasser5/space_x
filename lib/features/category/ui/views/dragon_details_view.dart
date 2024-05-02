@@ -13,7 +13,7 @@ class DragonDetailsView extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(dragon.name ?? ''),
-          backgroundColor: const Color(0xff112227),
+          backgroundColor: linearPrimaryColor2,
           centerTitle: true,
         ),
         body: Container(
@@ -25,7 +25,7 @@ class DragonDetailsView extends StatelessWidget {
               end: Alignment.topRight,
               colors: [
                 linearPrimaryColor1,
-                Color(0xff112227),
+                linearPrimaryColor2,
               ],
             ),
           ),
