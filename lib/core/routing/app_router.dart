@@ -1,5 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:space_x/features/home/data/models/crew_info/crew_info.dart';
+import 'package:space_x/features/home/logic/cubits/cubit/crew_info_cubit.dart';
+import 'package:space_x/features/home/ui/screens/details_view.dart';
+import 'package:space_x/features/home/ui/screens/home_view.dart';
 import 'package:space_x/features/overview/logic/campany_info/campany_info_cubit.dart';
 import 'package:space_x/features/overview/ui/screens/info_view.dart';
 import 'package:space_x/features/overview/ui/screens/links_view.dart';
@@ -11,6 +15,8 @@ abstract class AppRouter {
   static const String kOverView = '/overview';
   static const String kLinksView = '/linksview';
   static const String kInfoView = '/infoView';
+  static const String kHomeView = '/homeview';
+  static const String kDetailsView = '/detailsView';
 
   static final GoRouter routers = GoRouter(
     routes: [
@@ -37,6 +43,19 @@ abstract class AppRouter {
         builder: (context, state) => BlocProvider(
           create: (context) => CompanyInfoCubit()..getCampanyInfo(),
           child: const InfoView(),
+        ),
+      ),
+      GoRoute(
+        path: kHomeView,
+        builder: (context, state) => BlocProvider(
+          create: (context) => CrewInfoCubit()..getCrewInfo(),
+          child: const HomeView(),
+        ),
+      ),
+      GoRoute(
+        path: kDetailsView,
+        builder: (context, state) => DetailsView(
+          crewInfo: state.extra as CrewInfo,
         ),
       ),
     ],
