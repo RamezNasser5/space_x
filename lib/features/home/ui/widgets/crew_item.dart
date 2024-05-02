@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:space_x/core/utils/styles.dart';
 import 'package:space_x/features/home/data/models/crew_info/crew_info.dart';
 import 'package:space_x/features/home/ui/screens/details_view.dart';
 
@@ -53,10 +54,7 @@ class CrewItem extends StatelessWidget {
                       children: [
                         Text(
                           crewInfo.name!,
-                          style: const TextStyle(
-                            fontSize: 18,
-                            fontFamily: 'Poppins',
-                          ),
+                          style: Style.nameStyle,
                         ),
                         Text(
                           crewInfo.agency!,

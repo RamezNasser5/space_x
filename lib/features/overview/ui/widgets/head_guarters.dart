@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:space_x/core/utils/styles.dart';
 import 'package:space_x/features/overview/logic/campany_info/campany_info_cubit.dart';
 
 class HeadQuarters extends StatelessWidget {
@@ -23,9 +24,9 @@ class HeadQuarters extends StatelessWidget {
                 height: 300,
               ),
               const SizedBox(height: 25),
-              Text(
+              const Text(
                 'Head Quarters',
-                style: Theme.of(context).textTheme.titleLarge,
+                style: Style.titelStyle,
               ),
               Text(
                 'name of state: ${state.companyInfo.headquarters!.state}',

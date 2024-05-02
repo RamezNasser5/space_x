@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:space_x/core/utils/const.dart';
+import 'package:space_x/core/utils/styles.dart';
 import 'package:space_x/core/widgets/custom_item.dart';
 import 'package:space_x/features/overview/logic/campany_info/campany_info_cubit.dart';
 
@@ -61,9 +62,9 @@ class InfoBody extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: linearPrimaryColor2,
                       borderRadius: BorderRadius.circular(23)),
-                  child: Text(
+                  child: const Text(
                     'Info Body',
-                    style: Theme.of(context).textTheme.titleLarge,
+                    style: Style.titelStyle,
                   ),
                 ),
                 Flexible(
