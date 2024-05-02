@@ -1,8 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:space_x/features/category/data/models/dragons_model/dragons_model.dart';
 import 'package:space_x/features/category/logic/cubits/core_cubit/core_cubit.dart';
 import 'package:space_x/features/category/logic/cubits/dragon_cubit/dragon_cubit.dart';
 import 'package:space_x/features/category/ui/views/core_view.dart';
+import 'package:space_x/features/category/ui/views/dragon_details_view.dart';
 import 'package:space_x/features/category/ui/views/dragon_view.dart';
 import 'package:space_x/features/home/data/models/crew_info/crew_info.dart';
 import 'package:space_x/features/home/logic/cubits/cubit/crew_info_cubit.dart';
@@ -23,6 +25,7 @@ abstract class AppRouter {
   static const String kDetailsView = '/detailsView';
   static const String kCoreView = '/coreview';
   static const String kDragonView = '/dragonView';
+  static const String kDragonDetailsView = '/dragonDetailsView';
 
   static final GoRouter routers = GoRouter(
     routes: [
@@ -76,6 +79,12 @@ abstract class AppRouter {
         builder: (context, state) => BlocProvider(
           create: (context) => DragonCubit()..fetshAllDragons(),
           child: const DragonView(),
+        ),
+      ),
+      GoRoute(
+        path: kDragonDetailsView,
+        builder: (context, state) => DragonDetailsView(
+          dragon: state.extra as DragonsModel,
         ),
       ),
     ],

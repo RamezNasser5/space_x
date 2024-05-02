@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:space_x/core/routing/app_router.dart';
 import 'package:space_x/core/utils/const.dart';
 import 'package:space_x/core/widgets/custom_item.dart';
 import 'package:space_x/features/category/logic/cubits/dragon_cubit/dragon_cubit.dart';
-import 'package:space_x/features/category/ui/views/dragon_details_view.dart';
 
 class DragonsListView extends StatelessWidget {
   const DragonsListView({
@@ -18,14 +19,10 @@ class DragonsListView extends StatelessWidget {
       itemCount: state.dragons.length,
       itemBuilder: (context, index) {
         return GestureDetector(
-          onTap: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      DragonDetailsView(dragon: state.dragons[index]),
-                ));
-          },
+          onTap: () => GoRouter.of(context).push(
+            AppRouter.kDragonDetailsView,
+            extra: state.dragons[index],
+          ),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
