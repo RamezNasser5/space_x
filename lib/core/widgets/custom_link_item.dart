@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:space_x/core/utils/const.dart';
+import 'package:space_x/core/utils/styles.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CustomLinkItem extends StatelessWidget {
@@ -31,6 +32,7 @@ class CustomLinkItem extends StatelessWidget {
           },
           child: Text(
             itemKey,
+            style: Style.datatStyle,
           ),
         ),
       ),

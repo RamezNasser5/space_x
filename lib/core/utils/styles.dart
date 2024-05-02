@@ -12,7 +12,7 @@ abstract class Style {
   );
 
   static const TextStyle datatStyle = TextStyle(
-    fontSize: 18,
+    fontSize: 16,
     fontFamily: 'Poppins-Italic',
   );
 }
