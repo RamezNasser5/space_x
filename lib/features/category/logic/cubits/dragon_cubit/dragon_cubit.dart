@@ -1,26 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:space_x/core/network/services_dio.dart';
 import 'package:space_x/features/category/data/models/dragons_model/dragons_model.dart';
+import 'package:space_x/features/category/data/repo/category_repo/category_repo_impl.dart';
 
 part 'dragon_state.dart';
 
 class DragonCubit extends Cubit<DragonState> {
   DragonCubit() : super(DragonInitial());
 
-  DioServices dioServices = DioServices();
-  List<DragonsModel> dragons = [];
+  CategoryRepoImpl categoryRepoImpl = CategoryRepoImpl();
 
   fetshAllDragons() async {
     emit(DragonLoading());
-    try {
-      var data = await dioServices.get(endPoint: 'dragons');
-      for (var item in data) {
-        dragons.add(DragonsModel.fromJson(item));
-      }
-      emit(DragonSuccess(dragons: dragons));
-    } catch (e) {
-      emit(DragonFailure(message: e.toString()));
-    }
+    var result = await categoryRepoImpl.getDragons();
+    result.fold(
+      (errorMessage) => emit(DragonFailure(message: errorMessage)),
+      (dragons) => emit(DragonSuccess(dragons: dragons)),
+    );
   }
 }
