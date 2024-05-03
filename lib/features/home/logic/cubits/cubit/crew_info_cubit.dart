@@ -13,7 +13,9 @@ class CrewInfoCubit extends Cubit<CrewInfoState> {
   getCrewInfo() async {
     emit(CrewInfoLoading());
     var result = await crewInfoRepoImpl.getCrewInfo();
-    result.fold((errorMessage) => emit(CrewInfoFailure(message: errorMessage)),
-        (crewList) => emit(CrewInfoSuccess(crewInfo: crewList)));
+    result.fold(
+      (errorMessage) => emit(CrewInfoFailure(message: errorMessage)),
+      (crewList) => emit(CrewInfoSuccess(crewInfo: crewList)),
+    );
   }
 }
