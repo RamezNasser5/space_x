@@ -13,7 +13,8 @@ class CompanyInfoCubit extends Cubit<CompanyInfoState> {
   Future<void> getCampanyInfo() async {
     emit(CompanyInfoLoading());
     var result = await companyInfoRepoImpl.getCampanyInfo();
-    result.fold((l) => emit(CompanyInfoFailure(message: l)),
-        (r) => emit(CompanyInfoSuccess(companyInfo: r)));
+    result.fold(
+        (errorMessage) => emit(CompanyInfoFailure(message: errorMessage)),
+        (companyInfo) => emit(CompanyInfoSuccess(companyInfo: companyInfo)));
   }
 }
