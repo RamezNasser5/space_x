@@ -9,12 +9,11 @@ class InfoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            GoRouter.of(context).push(AppRouter.kHomeView);
-          },
-          child: const Icon(Icons.arrow_forward_ios),
-        ),
-        body: const InfoViewBody());
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => GoRouter.of(context).push(AppRouter.kHomeView),
+        child: const Icon(Icons.arrow_forward_ios),
+      ),
+      body: const InfoViewBody(),
+    );
   }
 }
