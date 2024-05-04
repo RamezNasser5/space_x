@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:space_x/core/routing/app_router.dart';
+import 'package:space_x/core/helper/helper_class.dart';
 
 class CustomNavigationButton extends StatelessWidget {
-  const CustomNavigationButton({super.key, required this.categoryName});
+  const CustomNavigationButton({
+    super.key,
+    required this.categoryName,
+  });
 
   final String categoryName;
 
@@ -21,7 +23,7 @@ class CustomNavigationButton extends StatelessWidget {
       ),
       child: GestureDetector(
         onTap: () {
-          categoriesNavigaton(context);
+          HelperClass().categoriesNavigaton(context, categoryName);
         },
         child: const Icon(
           Icons.arrow_forward_ios,
@@ -29,40 +31,5 @@ class CustomNavigationButton extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  void categoriesNavigaton(BuildContext context) {
-    switch (categoryName) {
-      case 'cores':
-        GoRouter.of(context).push(AppRouter.kCoreView);
-        break;
-      case 'dragons':
-        GoRouter.of(context).push(AppRouter.kDragonView);
-        break;
-      case 'landpads':
-        {}
-        break;
-      case 'launches':
-        {}
-        break;
-      case 'lanchpads':
-        {}
-        break;
-      case 'payloads':
-        {}
-        break;
-      case 'roadster':
-        {}
-        break;
-      case 'rockets':
-        {}
-        break;
-      case 'ships':
-        {}
-        break;
-      case 'starlink':
-        {}
-        break;
-    }
   }
 }

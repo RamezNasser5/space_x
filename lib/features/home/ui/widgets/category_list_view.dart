@@ -1,21 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:space_x/core/helper/helper_class.dart';
 import 'package:space_x/features/home/ui/widgets/category_item.dart';
 
 class CategoryListView extends StatelessWidget {
   CategoryListView({super.key});
 
-  final List<String> categories = [
-    'cores',
-    'dragons',
-    'landpads',
-    'launches',
-    'launchpads',
-    'payloads',
-    'roadster',
-    'rockets',
-    'ships',
-    'starlink',
-  ];
+  final List<String> categories = HelperClass().categories;
 
   @override
   Widget build(BuildContext context) {
