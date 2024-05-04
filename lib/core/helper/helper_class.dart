@@ -43,7 +43,7 @@ class HelperClass {
         GoRouter.of(context).push(AppRouter.kDragonView);
         break;
       case 'landpads':
-        {}
+        GoRouter.of(context).push(AppRouter.kLandPadsView);
         break;
       case 'launches':
         {}

@@ -3,9 +3,11 @@ import 'package:go_router/go_router.dart';
 import 'package:space_x/features/category/data/models/dragons_model/dragons_model.dart';
 import 'package:space_x/features/category/logic/cubits/core_cubit/core_cubit.dart';
 import 'package:space_x/features/category/logic/cubits/dragon_cubit/dragon_cubit.dart';
+import 'package:space_x/features/category/logic/cubits/landpads_cubit/land_pads_cubit.dart';
 import 'package:space_x/features/category/ui/views/core_view.dart';
 import 'package:space_x/features/category/ui/views/dragon_details_view.dart';
 import 'package:space_x/features/category/ui/views/dragon_view.dart';
+import 'package:space_x/features/category/ui/views/landpads_view.dart';
 import 'package:space_x/features/home/data/models/crew_info/crew_info.dart';
 import 'package:space_x/features/home/logic/cubits/cubit/crew_info_cubit.dart';
 import 'package:space_x/features/home/ui/screens/details_view.dart';
@@ -26,6 +28,7 @@ abstract class AppRouter {
   static const String kCoreView = '/coreview';
   static const String kDragonView = '/dragonView';
   static const String kDragonDetailsView = '/dragonDetailsView';
+  static const String kLandPadsView = '/landPadsView';
 
   static final GoRouter routers = GoRouter(
     routes: [
@@ -85,6 +88,13 @@ abstract class AppRouter {
         path: kDragonDetailsView,
         builder: (context, state) => DragonDetailsView(
           dragon: state.extra as DragonsModel,
+        ),
+      ),
+      GoRoute(
+        path: kLandPadsView,
+        builder: (context, state) => BlocProvider(
+          create: (context) => LandPadsCubit()..getAllLandPads(),
+          child: const LandPadsView(),
         ),
       ),
     ],
