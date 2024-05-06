@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:space_x/core/routing/app_router.dart';
 import 'package:space_x/core/utils/styles.dart';
+import 'package:space_x/core/widgets/custom_image_display.dart';
 import 'package:space_x/features/home/data/models/crew_info/crew_info.dart';
 
 class CrewItem extends StatelessWidget {
@@ -71,13 +72,9 @@ class CrewItem extends StatelessWidget {
             ),
             Positioned(
               left: 100,
-              top: -30,
-              child: CircleAvatar(
-                radius: 35,
-                backgroundImage: NetworkImage(
-                  crewInfo.image!,
-                ),
-              ),
+              top: -35,
+              child: CustomImageDisplay(
+                  image: crewInfo.image!, width: 80, height: 80),
             ),
           ],
         ),

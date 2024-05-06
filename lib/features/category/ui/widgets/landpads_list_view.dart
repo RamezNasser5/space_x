@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:space_x/core/utils/const.dart';
 import 'package:space_x/core/utils/styles.dart';
+import 'package:space_x/core/widgets/custom_image_display.dart';
 import 'package:space_x/features/category/logic/cubits/landpads_cubit/land_pads_cubit.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -22,13 +23,13 @@ class LandPadsListView extends StatelessWidget {
             color: linearPrimaryColor1,
             child: ListTile(
               leading: SizedBox(
-                height: 60,
-                width: 100,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(15),
-                  child: Image.network(state.landPads[index].images!.large![0]),
-                ),
-              ),
+                  height: 60,
+                  width: 100,
+                  child: CustomImageDisplay(
+                    image: state.landPads[index].images!.large![0],
+                    width: 50,
+                    height: 70,
+                  )),
               title: Text(
                 state.landPads[index].name!,
                 style: Style.nameStyle,

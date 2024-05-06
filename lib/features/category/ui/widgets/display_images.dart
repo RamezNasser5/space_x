@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:space_x/core/widgets/custom_image_display.dart';
 
 class DispalyImages extends StatelessWidget {
   const DispalyImages({super.key, required this.images});
@@ -22,7 +23,11 @@ class DispalyImages extends StatelessWidget {
           children: images.map((image) {
             return Padding(
               padding: const EdgeInsets.only(bottom: 10),
-              child: Image.network(image),
+              child: CustomImageDisplay(
+                image: image,
+                width: 400,
+                height: 200,
+              ),
             );
           }).toList(),
         ),
