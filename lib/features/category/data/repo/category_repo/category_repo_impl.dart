@@ -3,6 +3,7 @@ import 'package:space_x/core/network/services_dio.dart';
 import 'package:space_x/features/category/data/models/core_model/core_model.dart';
 import 'package:space_x/features/category/data/models/dragons_model/dragons_model.dart';
 import 'package:space_x/features/category/data/models/land_pads_model/land_pads_model.dart';
+import 'package:space_x/features/category/data/models/launches_model/launches_model.dart';
 import 'package:space_x/features/category/data/repo/category_repo/category_repo.dart';
 
 class CategoryRepoImpl implements CategoryRepo {
@@ -45,6 +46,21 @@ class CategoryRepoImpl implements CategoryRepo {
         landPads.add(LandPadsModel.fromJson(item));
       }
       return right(landPads);
+    } catch (e) {
+      return left(e.toString());
+    }
+  }
+
+  @override
+  Future<Either<String, List<LaunchesModel>>> getLaunches() async {
+    List<LaunchesModel> launches = [];
+    DioServices dioServices = DioServices();
+    try {
+      var data = await dioServices.get(endPoint: 'launches');
+      for (var item in data) {
+        launches.add(LaunchesModel.fromJson(item));
+      }
+      return right(launches);
     } catch (e) {
       return left(e.toString());
     }
