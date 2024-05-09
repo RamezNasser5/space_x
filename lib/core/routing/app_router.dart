@@ -8,6 +8,7 @@ import 'package:space_x/features/category/ui/views/core_view.dart';
 import 'package:space_x/features/category/ui/views/dragon_details_view.dart';
 import 'package:space_x/features/category/ui/views/dragon_view.dart';
 import 'package:space_x/features/category/ui/views/landpads_view.dart';
+import 'package:space_x/features/category/ui/views/launches_view.dart';
 import 'package:space_x/features/home/data/models/crew_info/crew_info.dart';
 import 'package:space_x/features/home/logic/cubits/cubit/crew_info_cubit.dart';
 import 'package:space_x/features/home/ui/screens/details_view.dart';
@@ -29,6 +30,7 @@ abstract class AppRouter {
   static const String kDragonView = '/dragonView';
   static const String kDragonDetailsView = '/dragonDetailsView';
   static const String kLandPadsView = '/landPadsView';
+  static const String kLaubnchesView = '/launchesView';
 
   static final GoRouter routers = GoRouter(
     routes: [
@@ -95,6 +97,13 @@ abstract class AppRouter {
         builder: (context, state) => BlocProvider(
           create: (context) => LandPadsCubit()..getAllLandPads(),
           child: const LandPadsView(),
+        ),
+      ),
+      GoRoute(
+        path: kLaubnchesView,
+        builder: (context, state) => BlocProvider(
+          create: (context) => LandPadsCubit()..getAllLandPads(),
+          child: const LaunchesView(),
         ),
       ),
     ],
