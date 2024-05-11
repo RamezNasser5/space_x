@@ -19,7 +19,7 @@ class HeadQuarters extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'images/Space X Dragon.png',
+                'assets/images/Space X Dragon.png',
                 width: 300,
                 height: 300,
               ),

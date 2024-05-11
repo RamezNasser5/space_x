@@ -12,7 +12,7 @@ class SpaceXLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SvgPicture.asset(
-      'images/$name.svg',
+      'assets/images/$name.svg',
       height: 30,
     );
   }

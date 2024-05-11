@@ -28,7 +28,7 @@ class _LogoState extends State<Logo> {
             top: 220,
             right: 27,
             child: SvgPicture.asset(
-              'images/Vector 3.svg',
+              'assets/images/Vector 3.svg',
               height: 500,
             ),
           ),

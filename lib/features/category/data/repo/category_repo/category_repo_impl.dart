@@ -6,6 +6,8 @@ import 'package:space_x/features/category/data/models/land_pads_model/land_pads_
 import 'package:space_x/features/category/data/models/launches_model/launches_model.dart';
 import 'package:space_x/features/category/data/repo/category_repo/category_repo.dart';
 
+import '../../models/launch_pads/launch_pads_model.dart';
+
 class CategoryRepoImpl implements CategoryRepo {
   DioServices dioServices = DioServices();
 
@@ -61,6 +63,19 @@ class CategoryRepoImpl implements CategoryRepo {
         launches.add(LaunchesModel.fromJson(item));
       }
       return right(launches);
+    } catch (e) {
+      return left(e.toString());
+    }
+  }
+  @override
+  Future<Either<String, List<LaunchPads>>> getLaunchPads() async {
+    List<LaunchPads> launchPads = [];
+    try {
+      var data = await dioServices.get(endPoint: 'launchpads');
+      for (var item in data) {
+        launchPads.add(LaunchPads.fromJson(item));
+      }
+      return right(launchPads);
     } catch (e) {
       return left(e.toString());
     }

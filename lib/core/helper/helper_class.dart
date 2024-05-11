@@ -48,8 +48,10 @@ class HelperClass {
       case 'launches':
         GoRouter.of(context).push(AppRouter.kLaubnchesView);
         break;
-      case 'lanchpads':
-        {}
+      case 'launchpads':
+        {
+          GoRouter.of(context).push(AppRouter.kLaunchesPadsView);
+        }
         break;
       case 'payloads':
         {}

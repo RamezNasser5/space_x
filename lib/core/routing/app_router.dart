@@ -1,9 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:space_x/features/category/data/models/dragons_model/dragons_model.dart';
+import 'package:space_x/features/category/data/models/launch_pads/launch_pads_model.dart';
 import 'package:space_x/features/category/logic/cubits/core_cubit/core_cubit.dart';
 import 'package:space_x/features/category/logic/cubits/dragon_cubit/dragon_cubit.dart';
 import 'package:space_x/features/category/logic/cubits/landpads_cubit/land_pads_cubit.dart';
+import 'package:space_x/features/category/logic/cubits/launchPads_cubit/launch_pads_cubit.dart';
 import 'package:space_x/features/category/ui/views/core_view.dart';
 import 'package:space_x/features/category/ui/views/dragon_details_view.dart';
 import 'package:space_x/features/category/ui/views/dragon_view.dart';
@@ -19,6 +21,8 @@ import 'package:space_x/features/overview/ui/screens/links_view.dart';
 import 'package:space_x/features/overview/ui/screens/overview.dart';
 import 'package:space_x/features/splach/ui/screens/splach_view.dart';
 
+import '../../features/category/ui/views/launchpads_view.dart';
+
 abstract class AppRouter {
   static const String initialRoute = '/';
   static const String kOverView = '/overview';
@@ -31,6 +35,7 @@ abstract class AppRouter {
   static const String kDragonDetailsView = '/dragonDetailsView';
   static const String kLandPadsView = '/landPadsView';
   static const String kLaubnchesView = '/launchesView';
+  static const String kLaunchesPadsView = '/launchesPadsView';
 
   static final GoRouter routers = GoRouter(
     routes: [
@@ -104,6 +109,13 @@ abstract class AppRouter {
         builder: (context, state) => BlocProvider(
           create: (context) => LandPadsCubit()..getAllLandPads(),
           child: const LaunchesView(),
+        ),
+      ),
+      GoRoute(
+        path: kLaunchesPadsView,
+        builder: (context, state) => BlocProvider(
+          create: (context) => LaunchPadsCubit()..getLaunchesPads(),
+          child:  LaunchPadView(),
         ),
       ),
     ],
