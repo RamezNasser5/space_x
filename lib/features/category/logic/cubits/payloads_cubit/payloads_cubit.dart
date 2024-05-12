@@ -1,5 +1,5 @@
-import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:space_x/features/category/data/models/payloads_model/payloads_model.dart';
 import 'package:space_x/features/category/data/repo/category_repo/category_repo_impl.dart';
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:space_x/core/utils/const.dart';
-import 'package:space_x/features/category/ui/widgets/landpads_view_body.dart';
 
 import '../widgets/launch_pad/launch_pads_veiw_body.dart';
 

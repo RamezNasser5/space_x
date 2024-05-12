@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:space_x/core/utils/const.dart';
 import 'package:space_x/core/utils/styles.dart';
 import 'package:space_x/core/widgets/custom_image_display.dart';
-import 'package:space_x/features/category/logic/cubits/landpads_cubit/land_pads_cubit.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../logic/cubits/launchPads_cubit/launch_pads_cubit.dart';
 
@@ -38,10 +36,10 @@ class LaunchPadsListView extends StatelessWidget {
               ),
               subtitle: Text(
                 'Status: ${state.launches[index].status}\n'
-                    'Locality: ${state.launches[index].locality}\n'
-                    'Region: ${state.launches[index].region}\n'
-                    'Attempts: ${state.launches[index].landingAttempts}\n'
-                    'Successes: ${state.launches[index].landingSuccesses}',
+                'Locality: ${state.launches[index].locality}\n'
+                'Region: ${state.launches[index].region}\n'
+                'Attempts: ${state.launches[index].landingAttempts}\n'
+                'Successes: ${state.launches[index].landingSuccesses}',
                 style: Style.datatStyle,
               ),
               onTap: () {
