@@ -5,7 +5,7 @@ import 'package:space_x/core/widgets/custom_image_display.dart';
 import 'package:space_x/features/category/logic/cubits/landpads_cubit/land_pads_cubit.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../logic/cubits/launchPads_cubit/launch_pads_cubit.dart';
+import '../../../logic/cubits/launchPads_cubit/launch_pads_cubit.dart';
 
 class LaunchPadsListView extends StatelessWidget {
   const LaunchPadsListView({
