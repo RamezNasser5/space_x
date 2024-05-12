@@ -54,7 +54,9 @@ class HelperClass {
         }
         break;
       case 'payloads':
-        {}
+        {
+          GoRouter.of(context).push(AppRouter.kPayloadsView);
+        }
         break;
       case 'roadster':
         {}

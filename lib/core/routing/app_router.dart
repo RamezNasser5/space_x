@@ -1,16 +1,17 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:space_x/features/category/data/models/dragons_model/dragons_model.dart';
-import 'package:space_x/features/category/data/models/launch_pads/launch_pads_model.dart';
 import 'package:space_x/features/category/logic/cubits/core_cubit/core_cubit.dart';
 import 'package:space_x/features/category/logic/cubits/dragon_cubit/dragon_cubit.dart';
 import 'package:space_x/features/category/logic/cubits/landpads_cubit/land_pads_cubit.dart';
 import 'package:space_x/features/category/logic/cubits/launchPads_cubit/launch_pads_cubit.dart';
+import 'package:space_x/features/category/logic/cubits/payloads_cubit/payloads_cubit.dart';
 import 'package:space_x/features/category/ui/views/core_view.dart';
 import 'package:space_x/features/category/ui/views/dragon_details_view.dart';
 import 'package:space_x/features/category/ui/views/dragon_view.dart';
 import 'package:space_x/features/category/ui/views/landpads_view.dart';
 import 'package:space_x/features/category/ui/views/launches_view.dart';
+import 'package:space_x/features/category/ui/views/payloads_view.dart';
 import 'package:space_x/features/home/data/models/crew_info/crew_info.dart';
 import 'package:space_x/features/home/logic/cubits/cubit/crew_info_cubit.dart';
 import 'package:space_x/features/home/ui/screens/details_view.dart';
@@ -36,6 +37,7 @@ abstract class AppRouter {
   static const String kLandPadsView = '/landPadsView';
   static const String kLaubnchesView = '/launchesView';
   static const String kLaunchesPadsView = '/launchesPadsView';
+  static const String kPayloadsView = '/payloadsView';
 
   static final GoRouter routers = GoRouter(
     routes: [
@@ -115,7 +117,14 @@ abstract class AppRouter {
         path: kLaunchesPadsView,
         builder: (context, state) => BlocProvider(
           create: (context) => LaunchPadsCubit()..getLaunchesPads(),
-          child:  LaunchPadView(),
+          child: const LaunchPadView(),
+        ),
+      ),
+      GoRoute(
+        path: kPayloadsView,
+        builder: (context, state) => BlocProvider(
+          create: (context) => PayloadsCubit()..fetchAllPayloads(),
+          child: const PayloadsView(),
         ),
       ),
     ],
