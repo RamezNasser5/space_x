@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:space_x/features/category/logic/cubits/core_cubit/core_cubit.dart';
-import 'package:space_x/features/category/ui/widgets/core_item.dart';
+import 'package:space_x/features/category/ui/widgets/cores/core_item.dart';
 
 class CoreListView extends StatelessWidget {
   const CoreListView({

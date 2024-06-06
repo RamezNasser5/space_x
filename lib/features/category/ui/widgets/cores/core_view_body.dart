@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:space_x/core/utils/const.dart';
-import 'package:space_x/features/category/ui/widgets/core_list_view.dart';
+import 'package:space_x/features/category/ui/widgets/cores/core_list_view.dart';
 
 class CoreViewBody extends StatelessWidget {
   const CoreViewBody({super.key});

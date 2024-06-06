@@ -12,10 +12,10 @@ class CustomSkipButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
-        backgroundColor: MaterialStateColor.resolveWith(
+        backgroundColor: WidgetStateColor.resolveWith(
           (states) => kSkipColor,
         ),
-        fixedSize: const MaterialStatePropertyAll(
+        fixedSize: const WidgetStatePropertyAll(
           Size(100, 50),
         ),
       ),
